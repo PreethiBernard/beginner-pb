@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Arrays;
+class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int airTime= sc.nextInt();
+        int n=sc.nextInt();
+        int arr[]= new int[n];
+        int res=0;
+        for(int i =0 ; i<n; i++)
+             arr[i]=sc.nextInt();
+        for(int j=0; j<n;j++){
+            int sum = 0;
+            for (int k=j+1; k<n;k++){
+                for(int l=k+1;l<n;l++)                {
+                    sum= arr[j]+arr[k]+arr[l];
+                    if (sum==airTime)
+                       res+=1;
+                }
+            }
+        }
+        if (res>0)
+        System.out.println(res);
+        else
+        System.out.println("-1");
+    }
+}
